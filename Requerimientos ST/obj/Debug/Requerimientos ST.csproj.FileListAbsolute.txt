@@ -235,3 +235,82 @@ D:\Desktop\Requerimientos ST\Requerimientos ST\obj\Debug\Requerimientos ST.cspro
 D:\Desktop\Requerimientos ST\Requerimientos ST\obj\Debug\Requerimientos ST.csproj.CopyComplete
 D:\Desktop\Requerimientos ST\Requerimientos ST\obj\Debug\Requerimientos ST.dll
 D:\Desktop\Requerimientos ST\Requerimientos ST\obj\Debug\Requerimientos ST.pdb
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\Requerimientos ST.dll.config
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\Requerimientos ST.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\Requerimientos ST.pdb
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\csc.exe
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\csc.exe.config
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\csc.rsp
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\csi.exe
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\csi.exe.config
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\csi.rsp
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.AppContext.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Console.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.IO.Compression.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.IO.Pipes.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.Claims.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.ValueTuple.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Xml.XPath.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\vbc.exe
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\vbc.exe.config
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\vbc.rsp
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\VBCSCompiler.exe
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\EntityFramework.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\EntityFramework.SqlServer.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Helpers.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Mvc.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Razor.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Webpages.Deployment.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Webpages.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Webpages.Razor.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\EntityFramework.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\EntityFramework.SqlServer.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Razor.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Webpages.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Webpages.Deployment.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Webpages.Razor.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Helpers.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\System.Web.Mvc.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\es\System.Web.Razor.resources.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\es\System.Web.Webpages.resources.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\es\System.Web.Webpages.Deployment.resources.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\es\System.Web.Webpages.Razor.resources.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\es\System.Web.Helpers.resources.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\bin\es\System.Web.Mvc.resources.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\obj\Debug\Requerimientos ST.csprojAssemblyReference.cache
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\obj\Debug\Requerimientos ST.csproj.CoreCompileInputs.cache
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\obj\Debug\Requerimientos ST.csproj.CopyComplete
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\obj\Debug\Requerimientos ST.dll
+C:\Users\jesus\Documents\github\RequerimientosST\Requerimientos ST\obj\Debug\Requerimientos ST.pdb

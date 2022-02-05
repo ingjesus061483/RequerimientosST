@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
 namespace Requerimientos_ST.Models
 {
     public class RequerimientoModelo
@@ -29,7 +25,7 @@ namespace Requerimientos_ST.Models
         public string MotivoCambio { get; set; }
 
         [Required]
-        [Display(Name = "Justifcacion")]
+        [Display(Name = "Justifcación")]
         public string Justificacion { get; set; }
         [Required]
         [Display(Name = "Prioridad")]
@@ -38,8 +34,7 @@ namespace Requerimientos_ST.Models
         [Required]
         [Display(Name = "Desarrollador")]
         public int? Desarrollador { get; set; }
-
-        
+                
         [Display(Name = "Fecha solicitud")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? FechaSolicitud { get; set; }

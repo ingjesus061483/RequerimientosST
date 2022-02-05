@@ -100,7 +100,6 @@
     <Parameter Name="Prioridad" Type="int" Mode="In" />
     <Parameter Name="Desarrollador" Type="int" Mode="In" />
     <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
-    <Parameter Name="FechaPrueba" Type="date" Mode="In" />
     <Parameter Name="motivodecambio" Type="varchar" Mode="In" />
   </Function>
   <Function Name="Pro_Editar_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

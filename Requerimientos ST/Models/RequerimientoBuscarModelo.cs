@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-
 namespace Requerimientos_ST.Models
 {
     public class RequerimientoBuscarModelo
@@ -30,8 +26,7 @@ namespace Requerimientos_ST.Models
 
         [Required]
         [Display(Name = "Desarrollador")]
-        public string Desarrollador { get; set; }
-
+        public string Desarrollador { get; set; }      
 
         [Display(Name = "Fecha solicitud")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]

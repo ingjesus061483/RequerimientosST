@@ -130,7 +130,6 @@
       <Parameter Name="Prioridad" Mode="In" Type="Int32" />
       <Parameter Name="Desarrollador" Mode="In" Type="Int32" />
       <Parameter Name="FechaDesarrollo" Mode="In" Type="DateTime" />
-      <Parameter Name="FechaPrueba" Mode="In" Type="DateTime" />
       <Parameter Name="motivodecambio" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="Pro_Editar_Requerimiento">

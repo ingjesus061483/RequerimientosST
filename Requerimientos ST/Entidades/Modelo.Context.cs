@@ -33,7 +33,7 @@ namespace Requerimientos_ST.Entidades
         public virtual DbSet<Prioridades> Prioridades { get; set; }
         public virtual DbSet<Requerimientos> Requerimientos { get; set; }
     
-        public virtual ObjectResult<Pro_Buscar_Requerimientos_Result> Pro_Buscar_Requerimientos(Nullable<int> area, Nullable<int> aplicativo, string alcance, Nullable<System.DateTime> fechaSolicitud, Nullable<int> prioridad, Nullable<int> desarrollador, Nullable<System.DateTime> fechaDesarrollo, Nullable<System.DateTime> fechaPrueba, string motivodecambio)
+        public virtual ObjectResult<Pro_Buscar_Requerimientos_Result> Pro_Buscar_Requerimientos(Nullable<int> area, Nullable<int> aplicativo, string alcance, Nullable<System.DateTime> fechaSolicitud, Nullable<int> prioridad, Nullable<int> desarrollador, Nullable<System.DateTime> fechaDesarrollo, string motivodecambio)
         {
             var areaParameter = area.HasValue ?
                 new ObjectParameter("Area", area) :
@@ -63,15 +63,11 @@ namespace Requerimientos_ST.Entidades
                 new ObjectParameter("FechaDesarrollo", fechaDesarrollo) :
                 new ObjectParameter("FechaDesarrollo", typeof(System.DateTime));
     
-            var fechaPruebaParameter = fechaPrueba.HasValue ?
-                new ObjectParameter("FechaPrueba", fechaPrueba) :
-                new ObjectParameter("FechaPrueba", typeof(System.DateTime));
-    
             var motivodecambioParameter = motivodecambio != null ?
                 new ObjectParameter("motivodecambio", motivodecambio) :
                 new ObjectParameter("motivodecambio", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pro_Buscar_Requerimientos_Result>("Pro_Buscar_Requerimientos", areaParameter, aplicativoParameter, alcanceParameter, fechaSolicitudParameter, prioridadParameter, desarrolladorParameter, fechaDesarrolloParameter, fechaPruebaParameter, motivodecambioParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pro_Buscar_Requerimientos_Result>("Pro_Buscar_Requerimientos", areaParameter, aplicativoParameter, alcanceParameter, fechaSolicitudParameter, prioridadParameter, desarrolladorParameter, fechaDesarrolloParameter, motivodecambioParameter);
         }
     
         public virtual int Pro_Editar_Requerimiento(Nullable<int> id, Nullable<int> area, Nullable<int> aplicativo, string alcance, Nullable<System.DateTime> fechaSolicitud, Nullable<int> prioridad, Nullable<int> desarrollador, Nullable<System.DateTime> fechaDesarrollo, Nullable<System.DateTime> fechaPrueba, string motivoDeCambio, string justificacion)
