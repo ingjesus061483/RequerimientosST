@@ -642,6 +642,7 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Views\Principal\InsertarRequerimiento.cshtml" />
+    <Content Include="sqlserver\PruebaTecnicaRequerimientos.bak" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

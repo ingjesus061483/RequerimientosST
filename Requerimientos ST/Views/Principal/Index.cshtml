@@ -24,20 +24,20 @@
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.Area, new { @class = "control-label" })
-                            @Html.DropDownListFor(m => m.Area, Requerimientos_ST.Helpers.Funciones.GetActividadesList(), "Seleccione", new { @class = "form-control", @required = "required", @style = "width:100%;" })
+                            @Html.DropDownListFor(m => m.Area, Requerimientos_ST.Helpers.Funciones.GetActividadesList(), "Seleccione", new { @class = "form-control", @style = "width:100%;" })
 
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.Aplicativo, new { @class = "control-label" })
-                            @Html.DropDownListFor(m => m.Aplicativo, Requerimientos_ST.Helpers.Funciones.GetAplicativosList(), "Seleccione", new { @class = "form-control",@required= "required", @style = "width:100%;" })
+                            @Html.DropDownListFor(m => m.Aplicativo, Requerimientos_ST.Helpers.Funciones.GetAplicativosList(), "Seleccione", new { @class = "form-control", @style = "width:100%;" })
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.Prioridad, new { @class = "control-label" })
-                            @Html.DropDownListFor(m => m.Prioridad, Requerimientos_ST.Helpers.Funciones.GetPrioridadesList(), "Seleccione", new { @class = "form-control", @required = "required", @style = "width:100%;" })
+                            @Html.DropDownListFor(m => m.Prioridad, Requerimientos_ST.Helpers.Funciones.GetPrioridadesList(), "Seleccione", new { @class = "form-control",  @style = "width:100%;" })
                         </div>
                     </div>
                 </div>
@@ -45,20 +45,20 @@
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.Alcance, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.Alcance, new { placeholder = "Alcance", @class = "form-control", @required = "required" })
+                            @Html.TextBoxFor(m => m.Alcance, new { placeholder = "Alcance", @class = "form-control" })
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.Desarrollador, new { @class = "control-label" })
-                            @Html.DropDownListFor(m => m.Desarrollador, Requerimientos_ST.Helpers.Funciones.GetDesarrolladoresList(), "Seleccione", new { @class = "form-control", @required = "required", @style = "width:100%;" })
+                            @Html.DropDownListFor(m => m.Desarrollador, Requerimientos_ST.Helpers.Funciones.GetDesarrolladoresList(), "Seleccione", new { @class = "form-control", @style = "width:100%;" })
 
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.FechaSolicitud, new { @class = "control-label" })                     
-                            @Html.TextBoxFor(m => m.FechaSolicitud, "", new { placeholder = "Fecha solicitud", @class = "form-control datepicker", @required= "required" })
+                            @Html.TextBoxFor(m => m.FechaSolicitud, "", new { placeholder = "Fecha solicitud", @class = "form-control datepicker" })
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     <div class="col-sm-4">
                         <div class="form-group col-margin" style="text-align:center">
                             @Html.LabelFor(m => m.FechaDesarrollo, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.FechaDesarrollo, "", new { placeholder = "Fecha desarrollo", @class = "form-control datepicker" , @required = "required" })
+                            @Html.TextBoxFor(m => m.FechaDesarrollo, "", new { placeholder = "Fecha desarrollo", @class = "form-control datepicker"  })
                         </div>
                     </div>
                     @if (Model.Id > 0)
