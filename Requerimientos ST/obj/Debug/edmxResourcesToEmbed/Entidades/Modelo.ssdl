@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaTecnicaWillmerPinedaModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aplicativos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Desarrolladores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Prioridades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Requerimientos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Area" Type="int" />
+    <Property Name="Aplicativo" Type="int" />
+    <Property Name="Alcance" Type="nvarchar" MaxLength="200" />
+    <Property Name="FechaSolicitud" Type="date" />
+    <Property Name="Prioridad" Type="int" />
+    <Property Name="Desarrollador" Type="int" />
+    <Property Name="FechaDesarrollo" Type="date" />
+    <Property Name="FechaPrueba" Type="date" />
+    <Property Name="MotivoDeCambio" Type="varchar" MaxLength="50" />
+    <Property Name="Justificacion" Type="varchar(max)" />
+  </EntityType>
+  <Association Name="fk_Requerimiento_aplicativo">
+    <End Role="Aplicativos" Type="Self.Aplicativos" Multiplicity="0..1" />
+    <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicativos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Requerimientos">
+        <PropertyRef Name="Aplicativo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Requerimiento_area">
+    <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+    <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Areas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Requerimientos">
+        <PropertyRef Name="Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Requerimiento_desarrollador">
+    <End Role="Desarrolladores" Type="Self.Desarrolladores" Multiplicity="0..1" />
+    <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Desarrolladores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Requerimientos">
+        <PropertyRef Name="Desarrollador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Requerimiento_prioridad">
+    <End Role="Prioridades" Type="Self.Prioridades" Multiplicity="0..1" />
+    <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prioridades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Requerimientos">
+        <PropertyRef Name="Prioridad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Pro_Buscar_Requerimientos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="Aplicativo" Type="int" Mode="In" />
+    <Parameter Name="Alcance" Type="varchar" Mode="In" />
+    <Parameter Name="FechaSolicitud" Type="date" Mode="In" />
+    <Parameter Name="Prioridad" Type="int" Mode="In" />
+    <Parameter Name="Desarrollador" Type="int" Mode="In" />
+    <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
+    <Parameter Name="FechaPrueba" Type="date" Mode="In" />
+    <Parameter Name="motivodecambio" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Pro_Editar_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="Aplicativo" Type="int" Mode="In" />
+    <Parameter Name="Alcance" Type="varchar" Mode="In" />
+    <Parameter Name="FechaSolicitud" Type="date" Mode="In" />
+    <Parameter Name="Prioridad" Type="int" Mode="In" />
+    <Parameter Name="Desarrollador" Type="int" Mode="In" />
+    <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
+    <Parameter Name="FechaPrueba" Type="date" Mode="In" />
+    <Parameter Name="motivoDeCambio" Type="varchar" Mode="In" />
+    <Parameter Name="justificacion" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="Pro_Eliminar_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pro_Insert_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Area" Type="int" Mode="In" />
+    <Parameter Name="Aplicativo" Type="int" Mode="In" />
+    <Parameter Name="Alcance" Type="varchar" Mode="In" />
+    <Parameter Name="FechaSolicitud" Type="date" Mode="In" />
+    <Parameter Name="Prioridad" Type="int" Mode="In" />
+    <Parameter Name="Desarrollador" Type="int" Mode="In" />
+    <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
+    <Parameter Name="FechaPrueba" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="PruebaTecnicaWillmerPinedaModeloStoreContainer">
+    <EntitySet Name="Aplicativos" EntityType="Self.Aplicativos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Desarrolladores" EntityType="Self.Desarrolladores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prioridades" EntityType="Self.Prioridades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requerimientos" EntityType="Self.Requerimientos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_Requerimiento_aplicativo" Association="Self.fk_Requerimiento_aplicativo">
+      <End Role="Aplicativos" EntitySet="Aplicativos" />
+      <End Role="Requerimientos" EntitySet="Requerimientos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Requerimiento_area" Association="Self.fk_Requerimiento_area">
+      <End Role="Areas" EntitySet="Areas" />
+      <End Role="Requerimientos" EntitySet="Requerimientos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Requerimiento_desarrollador" Association="Self.fk_Requerimiento_desarrollador">
+      <End Role="Desarrolladores" EntitySet="Desarrolladores" />
+      <End Role="Requerimientos" EntitySet="Requerimientos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Requerimiento_prioridad" Association="Self.fk_Requerimiento_prioridad">
+      <End Role="Prioridades" EntitySet="Prioridades" />
+      <End Role="Requerimientos" EntitySet="Requerimientos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

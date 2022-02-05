@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="912c4793d21c46a89a268effcdefdba7" Name="Diagram1">
+        <EntityTypeShape EntityType="PruebaTecnicaWillmerPinedaModelo.Aplicativos" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaTecnicaWillmerPinedaModelo.Areas" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaTecnicaWillmerPinedaModelo.Desarrolladores" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaTecnicaWillmerPinedaModelo.Prioridades" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaTecnicaWillmerPinedaModelo.Requerimientos" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="PruebaTecnicaWillmerPinedaModelo.fk_Requerimiento_aplicativo" ManuallyRouted="false" />
+        <AssociationConnector Association="PruebaTecnicaWillmerPinedaModelo.fk_Requerimiento_area" ManuallyRouted="false" />
+        <AssociationConnector Association="PruebaTecnicaWillmerPinedaModelo.fk_Requerimiento_desarrollador" ManuallyRouted="false" />
+        <AssociationConnector Association="PruebaTecnicaWillmerPinedaModelo.fk_Requerimiento_prioridad" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

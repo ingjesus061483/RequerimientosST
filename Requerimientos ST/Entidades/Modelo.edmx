@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PruebaTecnicaWillmerPinedaModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aplicativos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Desarrolladores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Prioridades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Requerimientos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Area" Type="int" />
+          <Property Name="Aplicativo" Type="int" />
+          <Property Name="Alcance" Type="nvarchar" MaxLength="200" />
+          <Property Name="FechaSolicitud" Type="date" />
+          <Property Name="Prioridad" Type="int" />
+          <Property Name="Desarrollador" Type="int" />
+          <Property Name="FechaDesarrollo" Type="date" />
+          <Property Name="FechaPrueba" Type="date" />
+          <Property Name="MotivoDeCambio" Type="varchar" MaxLength="50" />
+          <Property Name="Justificacion" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="fk_Requerimiento_aplicativo">
+          <End Role="Aplicativos" Type="Self.Aplicativos" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicativos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Aplicativo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Requerimiento_area">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Requerimiento_desarrollador">
+          <End Role="Desarrolladores" Type="Self.Desarrolladores" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Desarrolladores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Desarrollador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Requerimiento_prioridad">
+          <End Role="Prioridades" Type="Self.Prioridades" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prioridades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Prioridad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Pro_Buscar_Requerimientos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Area" Type="int" Mode="In" />
+          <Parameter Name="Aplicativo" Type="int" Mode="In" />
+          <Parameter Name="Alcance" Type="varchar" Mode="In" />
+          <Parameter Name="FechaSolicitud" Type="date" Mode="In" />
+          <Parameter Name="Prioridad" Type="int" Mode="In" />
+          <Parameter Name="Desarrollador" Type="int" Mode="In" />
+          <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
+          <Parameter Name="FechaPrueba" Type="date" Mode="In" />
+          <Parameter Name="motivodecambio" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Pro_Editar_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+          <Parameter Name="Area" Type="int" Mode="In" />
+          <Parameter Name="Aplicativo" Type="int" Mode="In" />
+          <Parameter Name="Alcance" Type="varchar" Mode="In" />
+          <Parameter Name="FechaSolicitud" Type="date" Mode="In" />
+          <Parameter Name="Prioridad" Type="int" Mode="In" />
+          <Parameter Name="Desarrollador" Type="int" Mode="In" />
+          <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
+          <Parameter Name="FechaPrueba" Type="date" Mode="In" />
+          <Parameter Name="motivoDeCambio" Type="varchar" Mode="In" />
+          <Parameter Name="justificacion" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="Pro_Eliminar_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Pro_Insert_Requerimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Area" Type="int" Mode="In" />
+          <Parameter Name="Aplicativo" Type="int" Mode="In" />
+          <Parameter Name="Alcance" Type="varchar" Mode="In" />
+          <Parameter Name="FechaSolicitud" Type="date" Mode="In" />
+          <Parameter Name="Prioridad" Type="int" Mode="In" />
+          <Parameter Name="Desarrollador" Type="int" Mode="In" />
+          <Parameter Name="FechaDesarrollo" Type="date" Mode="In" />
+          <Parameter Name="FechaPrueba" Type="date" Mode="In" />
+        </Function>
+        <EntityContainer Name="PruebaTecnicaWillmerPinedaModeloStoreContainer">
+          <EntitySet Name="Aplicativos" EntityType="Self.Aplicativos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Desarrolladores" EntityType="Self.Desarrolladores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Prioridades" EntityType="Self.Prioridades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requerimientos" EntityType="Self.Requerimientos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_Requerimiento_aplicativo" Association="Self.fk_Requerimiento_aplicativo">
+            <End Role="Aplicativos" EntitySet="Aplicativos" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Requerimiento_area" Association="Self.fk_Requerimiento_area">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Requerimiento_desarrollador" Association="Self.fk_Requerimiento_desarrollador">
+            <End Role="Desarrolladores" EntitySet="Desarrolladores" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Requerimiento_prioridad" Association="Self.fk_Requerimiento_prioridad">
+            <End Role="Prioridades" EntitySet="Prioridades" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PruebaTecnicaWillmerPinedaModelo" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Aplicativos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Requerimientos" Relationship="Self.fk_Requerimiento_aplicativo" FromRole="Aplicativos" ToRole="Requerimientos" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Requerimientos" Relationship="Self.fk_Requerimiento_area" FromRole="Areas" ToRole="Requerimientos" />
+        </EntityType>
+        <EntityType Name="Desarrolladores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Requerimientos" Relationship="Self.fk_Requerimiento_desarrollador" FromRole="Desarrolladores" ToRole="Requerimientos" />
+        </EntityType>
+        <EntityType Name="Prioridades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Requerimientos" Relationship="Self.fk_Requerimiento_prioridad" FromRole="Prioridades" ToRole="Requerimientos" />
+        </EntityType>
+        <EntityType Name="Requerimientos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Area" Type="Int32" />
+          <Property Name="Aplicativo" Type="Int32" />
+          <Property Name="Alcance" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FechaSolicitud" Type="DateTime" Precision="0" />
+          <Property Name="Prioridad" Type="Int32" />
+          <Property Name="Desarrollador" Type="Int32" />
+          <Property Name="FechaDesarrollo" Type="DateTime" Precision="0" />
+          <Property Name="FechaPrueba" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Aplicativos" Relationship="Self.fk_Requerimiento_aplicativo" FromRole="Requerimientos" ToRole="Aplicativos" />
+          <NavigationProperty Name="Areas" Relationship="Self.fk_Requerimiento_area" FromRole="Requerimientos" ToRole="Areas" />
+          <NavigationProperty Name="Desarrolladores" Relationship="Self.fk_Requerimiento_desarrollador" FromRole="Requerimientos" ToRole="Desarrolladores" />
+          <NavigationProperty Name="Prioridades" Relationship="Self.fk_Requerimiento_prioridad" FromRole="Requerimientos" ToRole="Prioridades" />
+          <Property Name="MotivoDeCambio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Justificacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="fk_Requerimiento_aplicativo">
+          <End Role="Aplicativos" Type="Self.Aplicativos" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aplicativos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Aplicativo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Requerimiento_area">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Area" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Requerimiento_desarrollador">
+          <End Role="Desarrolladores" Type="Self.Desarrolladores" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Desarrolladores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Desarrollador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Requerimiento_prioridad">
+          <End Role="Prioridades" Type="Self.Prioridades" Multiplicity="0..1" />
+          <End Role="Requerimientos" Type="Self.Requerimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prioridades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Requerimientos">
+              <PropertyRef Name="Prioridad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PruebaTecnicaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aplicativos" EntityType="Self.Aplicativos" />
+          <EntitySet Name="Areas" EntityType="Self.Areas" />
+          <EntitySet Name="Desarrolladores" EntityType="Self.Desarrolladores" />
+          <EntitySet Name="Prioridades" EntityType="Self.Prioridades" />
+          <EntitySet Name="Requerimientos" EntityType="Self.Requerimientos" />
+          <AssociationSet Name="fk_Requerimiento_aplicativo" Association="Self.fk_Requerimiento_aplicativo">
+            <End Role="Aplicativos" EntitySet="Aplicativos" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Requerimiento_area" Association="Self.fk_Requerimiento_area">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Requerimiento_desarrollador" Association="Self.fk_Requerimiento_desarrollador">
+            <End Role="Desarrolladores" EntitySet="Desarrolladores" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Requerimiento_prioridad" Association="Self.fk_Requerimiento_prioridad">
+            <End Role="Prioridades" EntitySet="Prioridades" />
+            <End Role="Requerimientos" EntitySet="Requerimientos" />
+          </AssociationSet>
+          <FunctionImport Name="Pro_Buscar_Requerimientos" ReturnType="Collection(PruebaTecnicaWillmerPinedaModelo.Pro_Buscar_Requerimientos_Result)">
+            <Parameter Name="Area" Mode="In" Type="Int32" />
+            <Parameter Name="Aplicativo" Mode="In" Type="Int32" />
+            <Parameter Name="Alcance" Mode="In" Type="String" />
+            <Parameter Name="FechaSolicitud" Mode="In" Type="DateTime" />
+            <Parameter Name="Prioridad" Mode="In" Type="Int32" />
+            <Parameter Name="Desarrollador" Mode="In" Type="Int32" />
+            <Parameter Name="FechaDesarrollo" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaPrueba" Mode="In" Type="DateTime" />
+            <Parameter Name="motivodecambio" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Pro_Editar_Requerimiento">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+            <Parameter Name="Area" Mode="In" Type="Int32" />
+            <Parameter Name="Aplicativo" Mode="In" Type="Int32" />
+            <Parameter Name="Alcance" Mode="In" Type="String" />
+            <Parameter Name="FechaSolicitud" Mode="In" Type="DateTime" />
+            <Parameter Name="Prioridad" Mode="In" Type="Int32" />
+            <Parameter Name="Desarrollador" Mode="In" Type="Int32" />
+            <Parameter Name="FechaDesarrollo" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaPrueba" Mode="In" Type="DateTime" />
+            <Parameter Name="motivoDeCambio" Mode="In" Type="String" />
+            <Parameter Name="justificacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Pro_Eliminar_Requerimiento">
+          <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Pro_Insert_Requerimiento">
+            <Parameter Name="Area" Mode="In" Type="Int32" />
+            <Parameter Name="Aplicativo" Mode="In" Type="Int32" />
+            <Parameter Name="Alcance" Mode="In" Type="String" />
+            <Parameter Name="FechaSolicitud" Mode="In" Type="DateTime" />
+            <Parameter Name="Prioridad" Mode="In" Type="Int32" />
+            <Parameter Name="Desarrollador" Mode="In" Type="Int32" />
+            <Parameter Name="FechaDesarrollo" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaPrueba" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Pro_Buscar_Requerimientos_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="area" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="aplicativo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Alcance" Nullable="true" MaxLength="200" />
+          <Property Type="DateTime" Name="FechaSolicitud" Nullable="true" />
+          <Property Type="String" Name="prioridad" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="desarrollador" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="FechaDesarrollo" Nullable="true" />
+          <Property Type="DateTime" Name="FechaPrueba" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PruebaTecnicaWillmerPinedaModeloStoreContainer" CdmEntityContainer="PruebaTecnicaEntities">
+          <EntitySetMapping Name="Aplicativos">
+            <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Aplicativos">
+              <MappingFragment StoreEntitySet="Aplicativos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Areas">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Desarrolladores">
+            <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Desarrolladores">
+              <MappingFragment StoreEntitySet="Desarrolladores">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Prioridades">
+            <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Prioridades">
+              <MappingFragment StoreEntitySet="Prioridades">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requerimientos">
+            <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Requerimientos">
+              <MappingFragment StoreEntitySet="Requerimientos">
+                <ScalarProperty Name="Justificacion" ColumnName="Justificacion" />
+                <ScalarProperty Name="MotivoDeCambio" ColumnName="MotivoDeCambio" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Aplicativo" ColumnName="Aplicativo" />
+                <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+                <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+                <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+                <ScalarProperty Name="Desarrollador" ColumnName="Desarrollador" />
+                <ScalarProperty Name="FechaDesarrollo" ColumnName="FechaDesarrollo" />
+                <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Pro_Buscar_Requerimientos" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Buscar_Requerimientos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Pro_Buscar_Requerimientos_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="aplicativo" ColumnName="aplicativo" />
+                <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+                <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+                <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+                <ScalarProperty Name="desarrollador" ColumnName="desarrollador" />
+                <ScalarProperty Name="FechaDesarrollo" ColumnName="FechaDesarrollo" />
+                <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pro_Editar_Requerimiento" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Editar_Requerimiento" />
+          <FunctionImportMapping FunctionImportName="Pro_Eliminar_Requerimiento" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Eliminar_Requerimiento" />
+          <FunctionImportMapping FunctionImportName="Pro_Insert_Requerimiento" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Insert_Requerimiento" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

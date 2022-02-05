@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PruebaTecnicaWillmerPinedaModeloStoreContainer" CdmEntityContainer="PruebaTecnicaEntities">
+    <EntitySetMapping Name="Aplicativos">
+      <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Aplicativos">
+        <MappingFragment StoreEntitySet="Aplicativos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Areas">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Desarrolladores">
+      <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Desarrolladores">
+        <MappingFragment StoreEntitySet="Desarrolladores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prioridades">
+      <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Prioridades">
+        <MappingFragment StoreEntitySet="Prioridades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requerimientos">
+      <EntityTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Requerimientos">
+        <MappingFragment StoreEntitySet="Requerimientos">
+          <ScalarProperty Name="Justificacion" ColumnName="Justificacion" />
+          <ScalarProperty Name="MotivoDeCambio" ColumnName="MotivoDeCambio" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Aplicativo" ColumnName="Aplicativo" />
+          <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+          <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+          <ScalarProperty Name="Prioridad" ColumnName="Prioridad" />
+          <ScalarProperty Name="Desarrollador" ColumnName="Desarrollador" />
+          <ScalarProperty Name="FechaDesarrollo" ColumnName="FechaDesarrollo" />
+          <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Pro_Buscar_Requerimientos" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Buscar_Requerimientos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PruebaTecnicaWillmerPinedaModelo.Pro_Buscar_Requerimientos_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="aplicativo" ColumnName="aplicativo" />
+          <ScalarProperty Name="Alcance" ColumnName="Alcance" />
+          <ScalarProperty Name="FechaSolicitud" ColumnName="FechaSolicitud" />
+          <ScalarProperty Name="prioridad" ColumnName="prioridad" />
+          <ScalarProperty Name="desarrollador" ColumnName="desarrollador" />
+          <ScalarProperty Name="FechaDesarrollo" ColumnName="FechaDesarrollo" />
+          <ScalarProperty Name="FechaPrueba" ColumnName="FechaPrueba" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Pro_Editar_Requerimiento" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Editar_Requerimiento" />
+    <FunctionImportMapping FunctionImportName="Pro_Eliminar_Requerimiento" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Eliminar_Requerimiento" />
+    <FunctionImportMapping FunctionImportName="Pro_Insert_Requerimiento" FunctionName="PruebaTecnicaWillmerPinedaModelo.Store.Pro_Insert_Requerimiento" />
+  </EntityContainerMapping>
+</Mapping>
